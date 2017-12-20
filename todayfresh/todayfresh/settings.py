@@ -85,8 +85,8 @@ DATABASES = {
         'NAME': 'todayfresh',
         'USER': 'root',
         'PASSWORD':'mysql',
-        'HOST':'localhost',
-        'PORT':3306,
+        'HOST': '172.16.183.1',
+        'PORT': 3306,
     }
 }
 
@@ -119,3 +119,13 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': 600,
     'height': 400,
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_PORT = 25
+#发送邮件的邮箱
+EMAIL_HOST_USER = 'smartli_it@163.com'
+#在邮箱中设置的客户端授权密码
+EMAIL_HOST_PASSWORD = 'smart123'
+#收件人看到的发件人
+EMAIL_FROM = 'python<smartli_it@163.com>'
