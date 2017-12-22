@@ -129,3 +129,22 @@ EMAIL_HOST_USER = 'smartli_it@163.com'
 EMAIL_HOST_PASSWORD = 'smart123'
 #收件人看到的发件人
 EMAIL_FROM = 'python<smartli_it@163.com>'
+
+# 设置缓存
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://172.16.183.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+# session 设置存放在内存中
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+# 用缓存默认的default这个
+SESSION_CACHE_ALIAS = "default"
+
+# 登陆验证重定向
+LOGIN_URL = '/user/login'
+
