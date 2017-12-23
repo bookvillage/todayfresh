@@ -148,3 +148,11 @@ SESSION_CACHE_ALIAS = "default"
 # 登陆验证重定向
 LOGIN_URL = '/user/login'
 
+# 制定django文件系统存储类
+DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FDFSStorage'
+
+# fdfs系统上的nginx的ip和端口号
+FDFS_NGINX_URL = 'http://172.16.183.132:8888/'
+
+# fastdfs的客户端配置文件位置
+FDFS_CLIENT_CONF = os.path.join(BASE_DIR,'utils/fastdfs/client.conf')
